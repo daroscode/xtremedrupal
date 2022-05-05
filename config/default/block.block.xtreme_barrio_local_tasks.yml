@@ -1,0 +1,22 @@
+uuid: 44051e88-b5c0-4eb1-90f6-f1c2343cbc27
+langcode: en
+status: true
+dependencies:
+  theme:
+    - xtreme_barrio
+_core:
+  default_config_hash: Qf2BoIzd9py5AYXZj8fJzCYDyVk1-AWXcu-AqQeDZKA
+id: xtreme_barrio_local_tasks
+theme: xtreme_barrio
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

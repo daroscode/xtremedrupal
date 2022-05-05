@@ -1,0 +1,20 @@
+uuid: f8043d13-672a-4b2b-87dd-d4b91340e628
+langcode: en
+status: true
+dependencies:
+  theme:
+    - xtreme_bootstrap_sass
+_core:
+  default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
+id: xtreme_bootstrap_sass_page_title
+theme: xtreme_bootstrap_sass
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

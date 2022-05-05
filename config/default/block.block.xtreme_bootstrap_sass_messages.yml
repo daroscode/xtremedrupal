@@ -1,0 +1,22 @@
+uuid: 295a633e-b35e-4835-adf2-fa95180520ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtreme_bootstrap_sass
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: xtreme_bootstrap_sass_messages
+theme: xtreme_bootstrap_sass
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }
