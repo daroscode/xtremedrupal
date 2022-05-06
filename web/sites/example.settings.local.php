@@ -164,3 +164,4 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = '../config/default';
+$settings['hash_salt'] = 'bugsbunny_was_an_douche';
