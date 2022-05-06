@@ -1,7 +1,7 @@
 # xtremedrupal
 
 ## Instalação / Estrutura:
-- Criar o arquivo settings local: ```cp web/sites/example.settings.local.php web/sites/default/settings.local.php```
+- Criar o arquivo settings local: ```cp web/sites/xtreme.settings.local.php web/sites/default/settings.local.php```
 - Criar o arquivo settings padrão: ```cp web/sites/default/example.settings.php web/sites/default/settings.php```
 - Iniciar ambiente: ```lando start```
 - Instalar Drupal: ```lando composer install```
@@ -13,4 +13,4 @@
 ## Instalação / Banco de dados:
 Quando for criado algo que seja gravado no banco de dados (ao invés de configurações)
 - Criar dump do banco: ```lando drush sql-dump > database.sql```
-- Atualizar no repo: ```gzip -c database.sql > database.sql.gz```
+- Atualizar no repo: ```rm db/database.sql.gz && gzip -c database.sql > db/database.sql.gz```
