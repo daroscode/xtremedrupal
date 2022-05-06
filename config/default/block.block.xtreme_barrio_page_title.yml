@@ -1,0 +1,20 @@
+uuid: 0cc70a40-545b-4e2b-93b0-fb5bd2958206
+langcode: en
+status: true
+dependencies:
+  theme:
+    - xtreme_barrio
+_core:
+  default_config_hash: ItFhhiUOoeR7oIq73ZaCV7PAYrOwXZ-9fazMzF5DJXM
+id: xtreme_barrio_page_title
+theme: xtreme_barrio
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

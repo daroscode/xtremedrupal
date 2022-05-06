@@ -1,0 +1,25 @@
+uuid: b2c29228-1d19-4ce8-a36e-b58a26b7f265
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtreme_barrio
+_core:
+  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+id: xtreme_barrio_branding
+theme: xtreme_barrio
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

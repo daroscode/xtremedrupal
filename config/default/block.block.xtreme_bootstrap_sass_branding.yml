@@ -1,0 +1,25 @@
+uuid: 5ec086fc-d1ed-48b6-a614-c20dbb12259a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtreme_bootstrap_sass
+_core:
+  default_config_hash: d-0emr1mEq7sFKDu5RHUJckvNk62hvIZdRwPEfnJyGg
+id: xtreme_bootstrap_sass_branding
+theme: xtreme_bootstrap_sass
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

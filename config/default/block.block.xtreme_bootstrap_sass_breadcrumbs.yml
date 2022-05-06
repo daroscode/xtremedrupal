@@ -1,0 +1,22 @@
+uuid: 3c9b1f34-7755-4e33-85ee-2b7609f46842
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtreme_bootstrap_sass
+_core:
+  default_config_hash: y0bXRvKYQQKkf_RVxA3aOPGpIfKKsDOzzrWYCgjxJ9Y
+id: xtreme_bootstrap_sass_breadcrumbs
+theme: xtreme_bootstrap_sass
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

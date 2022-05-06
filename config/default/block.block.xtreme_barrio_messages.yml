@@ -1,0 +1,22 @@
+uuid: fe7d3b87-3c73-46ba-b513-f9b2f1bc5288
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - xtreme_barrio
+_core:
+  default_config_hash: KC12e0aosUnBBs5bd374JVcQjJaFNOSIHzu0dUGf22o
+id: xtreme_barrio_messages
+theme: xtreme_barrio
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

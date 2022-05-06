@@ -1,0 +1,22 @@
+uuid: 90450847-665b-4b11-a3c7-73b69c9dd7ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - xtreme_bootstrap_sass
+_core:
+  default_config_hash: '-laWx8WA-ikiIEH3NJQ0hVbjqk3iEuBms91LB0B4IQU'
+id: xtreme_bootstrap_sass_help
+theme: xtreme_bootstrap_sass
+region: content
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
