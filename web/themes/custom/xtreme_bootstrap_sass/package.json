@@ -17,7 +17,8 @@
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.1.0",
-    "bootstrap-icons": "^1.4.0"
+    "bootstrap-icons": "^1.4.0",
+    "gulp-cli": "^2.3.0"
   },
   "devDependencies": {
     "browser-sync": "^2.24.7",

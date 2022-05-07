@@ -50,5 +50,11 @@ vendor/
 
 # Ignoring VSCode files
 .history/
+.vscode/
 
+# Ignoring Node content
+/web/themes/contrib/*/node_modules/
+/web/themes/custom/*/node_modules/
+
+# Ignoring databases
 *.sql

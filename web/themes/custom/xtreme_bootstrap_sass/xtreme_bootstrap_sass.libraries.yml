@@ -1,6 +1,6 @@
 global-styling:
-  version: 1.0
-  js:
+  version: VERSION
+  js: 
     js/bootstrap.min.js: { weight: -48 }
     js/barrio.js: {}
     js/custom.js: {}

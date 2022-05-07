@@ -1,6 +1,6 @@
-name: SASS Bootstrap Starter Kit XTREME
+name: Xtreme Barrio Sass Subtheme
 type: theme
-description: 'SASS starter kit for a Bootstrap Barrio on XTREME.'
+description: 'SASS starter kit for a Bootstrap Barrio SubTheme.'
 # version: VERSION
 core: 8.x
 core_version_requirement: ^8 || ^9
@@ -35,4 +35,6 @@ regions:
   footer_fifth: 'Footer fifth'
 
 # Information added by Drupal.org packaging script on 2021-10-11
-version: '1.0'
+version: '5.0.5'
+project: 'xtreme_bootstrap_sass'
+datestamp: 1633918678

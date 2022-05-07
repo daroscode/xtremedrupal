@@ -14,3 +14,12 @@
 Quando for criado algo que seja gravado no banco de dados (ao invés de configurações)
 - Criar dump do banco: ```lando drush sql-dump > database.sql```
 - Atualizar no repo: ```rm db/database.sql.gz && gzip -c database.sql > db/database.sql.gz```
+
+## Instalação / Tema:
+
+- Entre na pasta do tema: ```cd web/themes/custom/xtreme_bootstrap_sass/```
+- Instale o Gulp: ```npm install --global gulp-cli```
+- Instale as dependências: ```npm install```
+- Para atualizar alterações feitas rode: ```gulp```
+
+* Observação: Estas instruções são baseadas na versão 10.5.1 do Node
