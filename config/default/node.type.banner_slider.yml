@@ -1,0 +1,17 @@
+uuid: 0adba47f-2b60-4d60-8f77-1231116c982b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Banner Tipo Slider'
+type: banner_slider
+description: 'Use este tipo de conteúdo para criar banners dinâmicos.'
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

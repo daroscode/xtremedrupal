@@ -27,6 +27,9 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  flexslider: 0
+  flexslider_fields: 0
+  flexslider_views: 0
   gtm: 0
   help: 0
   history: 0
@@ -34,6 +37,7 @@ module:
   jsonapi: 0
   layout_builder: 0
   layout_discovery: 0
+  libraries: 0
   link: 0
   maxlength: 0
   media: 0

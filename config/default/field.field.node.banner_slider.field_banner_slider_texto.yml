@@ -1,0 +1,19 @@
+uuid: 72792fe0-44a6-4f67-8743-0125160d0abd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_slider_texto
+    - node.type.banner_slider
+id: node.banner_slider.field_banner_slider_texto
+field_name: field_banner_slider_texto
+entity_type: node
+bundle: banner_slider
+label: 'Banner Slider Texto'
+description: 'Insira um texto para seu slider.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

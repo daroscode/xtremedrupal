@@ -1,0 +1,18 @@
+uuid: 0a0eead3-2b5b-4e1d-ab17-16e21f2eaea4
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.banner_slider
+id: node.banner_slider.title
+field_name: title
+entity_type: node
+bundle: banner_slider
+label: Título
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
