@@ -1,0 +1,14 @@
+name: 'Maxlength custom widget test'
+type: module
+description: 'Test support for custom widget settings'
+package: Testing
+dependencies:
+  - maxlength:maxlength
+  - drupal:node
+hidden: true
+core_version_requirement: ^8.7.7 || ^9
+
+# Information added by Drupal.org packaging script on 2022-12-12
+version: '2.0.1'
+project: 'maxlength'
+datestamp: 1670854119
