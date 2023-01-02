@@ -1,0 +1,51 @@
+uuid: af6af37d-b4d5-4bc2-8fd4-de68993ef5b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.banner_slider.field_banner_slider_image
+    - field.field.node.banner_slider.field_banner_slider_link
+    - field.field.node.banner_slider.field_banner_slider_texto
+    - node.type.banner_slider
+  module:
+    - image
+    - user
+id: node.banner_slider.default
+targetEntityType: node
+bundle: banner_slider
+mode: default
+content:
+  field_banner_slider_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_banner_slider_link:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_banner_slider_texto:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

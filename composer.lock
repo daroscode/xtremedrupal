@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75d319d68ab98b46c2d4f1264a617ba2",
+    "content-hash": "2b3bbfdcff682c302af43652d9a80005",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1976,6 +1976,75 @@
             }
         },
         {
+            "name": "drupal/flexslider",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/flexslider.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/flexslider-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "040e3f19200a3b6e008ad51abaa4cced009ec838"
+            },
+            "require": {
+                "drupal/core": "^8.8.0 || ^9.0"
+            },
+            "require-dev": {
+                "drupal/flexslider_fields": "*",
+                "drupal/flexslider_views": "*"
+            },
+            "suggest": {
+                "woothemes/flexslider": "~2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1596904945",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "FlexSlider Module Contributors",
+                    "homepage": "https://www.drupal.org/node/1316346/committers",
+                    "role": "Contributors"
+                },
+                {
+                    "name": "ClassicCut",
+                    "homepage": "https://www.drupal.org/user/2703101"
+                },
+                {
+                    "name": "minorOffense",
+                    "homepage": "https://www.drupal.org/user/129088"
+                },
+                {
+                    "name": "ryanwebpage",
+                    "homepage": "https://www.drupal.org/user/737596"
+                },
+                {
+                    "name": "spotzero",
+                    "homepage": "https://www.drupal.org/user/657848"
+                }
+            ],
+            "description": "FlexSlider 2 integration for Drupal",
+            "homepage": "https://www.drupal.org/project/flexslider",
+            "support": {
+                "source": "https://git.drupalcode.org/project/flexslider",
+                "issues": "https://drupal.org/project/issues/flexslider"
+            }
+        },
+        {
             "name": "drupal/gtm",
             "version": "1.8.0",
             "source": {
@@ -2029,6 +2098,72 @@
             "homepage": "https://www.drupal.org/project/gtm",
             "support": {
                 "source": "https://git.drupalcode.org/project/gtm"
+            }
+        },
+        {
+            "name": "drupal/libraries",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/libraries.git",
+                "reference": "4.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/libraries-4.0.0.zip",
+                "reference": "4.0.0",
+                "shasum": "52c0b4ecb0566d36afdeb5f8cf780d085a41fc64"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.0",
+                    "datestamp": "1666346899",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
+                },
+                {
+                    "name": "podarok",
+                    "homepage": "https://www.drupal.org/user/116002"
+                },
+                {
+                    "name": "Pol",
+                    "homepage": "https://www.drupal.org/user/47194"
+                },
+                {
+                    "name": "rjacobs",
+                    "homepage": "https://www.drupal.org/user/422459"
+                },
+                {
+                    "name": "sun",
+                    "homepage": "https://www.drupal.org/user/54136"
+                },
+                {
+                    "name": "tstoeckler",
+                    "homepage": "https://www.drupal.org/user/107158"
+                }
+            ],
+            "description": "Allows version-dependent and shared usage of external libraries in Drupal.",
+            "homepage": "http://drupal.org/project/libraries",
+            "support": {
+                "source": "http://cgit.drupalcode.org/libraries",
+                "issues": "http://drupal.org/project/issues/libraries",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
         {

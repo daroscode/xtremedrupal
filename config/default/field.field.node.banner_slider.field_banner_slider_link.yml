@@ -1,0 +1,19 @@
+uuid: 619466ff-dc27-42b7-a177-c32259ccb4a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner_slider_link
+    - node.type.banner_slider
+id: node.banner_slider.field_banner_slider_link
+field_name: field_banner_slider_link
+entity_type: node
+bundle: banner_slider
+label: 'Banner Slider Link'
+description: 'Insira um link de destino para seu slider.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
