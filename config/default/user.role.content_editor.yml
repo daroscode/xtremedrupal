@@ -9,6 +9,7 @@ dependencies:
   module:
     - comment
     - contextual
+    - eu_cookie_compliance
     - file
     - node
     - path
@@ -38,6 +39,7 @@ permissions:
   - 'delete own article content'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'display eu cookie compliance popup'
   - 'edit own article content'
   - 'edit own comments'
   - 'edit own page content'
