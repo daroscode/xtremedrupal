@@ -19,7 +19,8 @@
 
       var $self = this;
 
-      $('#toolbar-bar', context).once('admin-toolbar-search').each(function () {
+      const elements = once('admin-toolbar-search', '#toolbar-bar', context);
+      $(elements).each(function () {
         $self.links = [];
 
         var $searchTab = $(this).find('#admin-toolbar-search-tab')
@@ -35,7 +36,7 @@
           source: function (request, response) {
             var data = $self.handleAutocomplete(request.term);
             if (!$self.extraFetched && drupalSettings.adminToolbarSearch.loadExtraLinks) {
-              $.getJSON( Drupal.url('admin/admin-toolbar-search'), function( data ) {
+              $.getJSON( Drupal.url('admin/admin-toolbar-search'), function ( data ) {
                 $(data).each(function () {
                   var item = this;
                   item.label = this.labelRaw + ' ' + this.value;
