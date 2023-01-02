@@ -7,8 +7,8 @@ mail: daniel@xtremedrupal.com
 slogan: ''
 page:
   403: ''
-  404: ''
-  front: /node
+  404: /node/2
+  front: /node/1
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
