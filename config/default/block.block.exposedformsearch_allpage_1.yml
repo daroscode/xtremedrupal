@@ -1,0 +1,23 @@
+uuid: 47054481-6831-4237-973c-4508df99e977
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.search_all
+  module:
+    - views
+  theme:
+    - xtreme_bootstrap_sass
+id: exposedformsearch_allpage_1
+theme: xtreme_bootstrap_sass
+region: top_header
+weight: -6
+provider: null
+plugin: 'views_exposed_filter_block:search_all-page_1'
+settings:
+  id: 'views_exposed_filter_block:search_all-page_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility: {  }
