@@ -10,7 +10,6 @@ dependencies:
     - eu_cookie_compliance
     - filter
     - media
-    - search
     - shortcut
     - system
 _core:
@@ -26,7 +25,6 @@ permissions:
   - 'access site-wide contact form'
   - 'display eu cookie compliance popup'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view media'
