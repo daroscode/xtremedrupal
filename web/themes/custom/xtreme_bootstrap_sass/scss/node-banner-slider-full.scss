@@ -1,0 +1,48 @@
+.banner-slider-result {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    align-content: center;
+    .image {
+        margin-bottom: $margin-sm;
+        width: 100%;
+        max-width: 1920px;
+        height: auto;
+        @include md {
+            margin-bottom: $margin-md;
+        }
+        @include lg {
+            margin-bottom: $margin-lg;
+        }
+    }
+    .content {
+        margin-bottom: $margin-sm;
+        @include md {
+            margin-bottom: $margin-md;
+        }
+        @include lg {
+            margin-bottom: $margin-lg;
+        }
+        .text {
+            font-family: $font-lato;
+            font-size: $font-size-sm;
+            margin-bottom: $margin-sm;
+            @include md {
+                font-size: $font-size-lg;
+                margin-bottom: $margin-md;
+            }
+            @include lg {
+                margin-bottom: $margin-lg;
+            }
+        }
+        .link {
+            font-family: $font-lato;
+            font-size: $font-size-sm;
+            @include md {
+                font-size: $font-size-lg;
+            }
+        }
+    }
+}
