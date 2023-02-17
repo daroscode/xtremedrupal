@@ -58,3 +58,8 @@ vendor/
 
 # Ignoring databases
 *.sql
+
+# Ignorigin Netbeans files
+/nbproject/private/
+/nbproject/
+
