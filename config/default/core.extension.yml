@@ -7,6 +7,7 @@ module:
   admin_toolbar_tools: 0
   automated_cron: 0
   basic_auth: 0
+  better_exposed_filters: 0
   big_pipe: 0
   blazy: 0
   blazy_ui: 0
@@ -19,6 +20,7 @@ module:
   contact: 0
   contextual: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
   easy_breadcrumb: 0
@@ -34,6 +36,10 @@ module:
   help: 0
   history: 0
   image: 0
+  jquery_ui: 0
+  jquery_ui_datepicker: 0
+  jquery_ui_slider: 0
+  jquery_ui_touch_punch: 0
   jsonapi: 0
   layout_builder: 0
   layout_discovery: 0
@@ -60,8 +66,10 @@ module:
   shortcut: 0
   slick: 0
   slick_ui: 0
+  syslog: 0
   system: 0
   taxonomy: 0
+  telephone: 0
   text: 0
   toolbar: 0
   tour: 0
@@ -69,6 +77,14 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  webform: 0
+  webform_attachment: 0
+  webform_image_select: 0
+  webform_node: 0
+  webform_submission_export_import: 0
+  webform_submission_log: 0
+  webform_ui: 0
+  webform_bootstrap: 1
   views: 10
   standard: 1000
   eu_cookie_compliance: 1001
