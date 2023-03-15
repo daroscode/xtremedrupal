@@ -19,7 +19,7 @@ function maxlength_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.maxlength':
       $output = '<h2>' . t('About') . '</h2>';
       $output = '<p>' . t('To configure a character limit, navigate to the <strong>Manage form display</strong> settings page for the field you are setting a limit on. For example, setting a character limit on the Body field of the Article content type would be found at <em>Structure > Content Types > Article > Manage form display</em>.') . '</p>';
-      $output .= '<p>' . t('For more information, see the @link', ['@link' => '<a href="https://www.drupal.org/docs/contributed-modules/maxlength">online documentation for the Maxlength module</a>.']) . '</p>';
+      $output .= '<p>' . t('For more information, see the <a href="@maxlength-documentation" target="_blank">online documentation for the Maxlength module</a>.', ['@maxlength-documentation' => 'https://www.drupal.org/docs/contributed-modules/maxlength']) . '</p>';
       return $output;
   }
 }
@@ -149,9 +149,9 @@ function maxlength_field_widget_settings_summary_alter(&$summary, $context) {
 }
 
 /**
- * Implements hook_field_widget_form_alter().
+ * Implements hook_field_widget_single_element_form_alter().
  */
-function maxlength_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+function maxlength_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
   $thirdPartySettings = $context['widget']->getThirdPartySettings();
   if (!empty($thirdPartySettings['maxlength']['maxlength_js']) || !empty($thirdPartySettings['maxlength']['maxlength_js_summary'])) {
     $element['#maxlength_js'] = TRUE;

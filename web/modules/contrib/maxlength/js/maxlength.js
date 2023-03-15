@@ -1,6 +1,6 @@
 (function ($, Drupal) {
 
-  // Make evrything local
+  // Make variables local.
   var ml = ml || {};
   ml.options = ml.options || {};
 
@@ -12,7 +12,7 @@
         ml.ckeditor();
       }
 
-      $context.find('.maxlength').filter(':input').once('maxlength').each(function () {
+      $(once('maxlength', $context.find('.maxlength').filter(':input'))).each(function () {
         var options = {};
         var $this = $(this);
         options['counterText'] = $this.attr('maxlength_js_label');
@@ -20,11 +20,19 @@
           options['enforce'] = true;
         }
         $this.charCount(options);
+
+        // CKEditor 5 integration.
+        if (this.dataset.ckeditor5Id) {
+          let eid = this.dataset.ckeditor5Id;
+          setTimeout(function() {
+            ml.ckeditor5(Drupal.CKEditor5Instances.get(eid), options);
+          });
+        }
       });
     },
     detach: function(context, settings) {
       var $context = $(context);
-      $context.find('.maxlength').removeOnce('data-maxlength').each(function () {
+      $(once.remove('maxlength', $context.find('.maxlength'))).each(function () {
         $(this).charCount({
           action: 'detach'
         });
@@ -40,12 +48,18 @@
    *   https://gist.github.com/Fabax/4724890
    *
    *  @param obj
-   *    a jQuery object for input elements
+   *    A jQuery object for input elements.
    *  @param options
-   *    an array of options.
+   *    The array containing the maxlength configurations.
    *  @param count
    *    In case obj.val() wouldn't return the text to count, this should
    *    be passed with the number of characters.
+   *  @param wysiwyg
+   *    The ckeditor.
+   *  @param getter
+   *    The name of the data getter function.
+   *  @param setter
+   *    The name of the data setter function.
    */
   ml.calculate = function(obj, options, count, wysiwyg, getter, setter) {
     var counter = $('#' + obj.attr('id') + '-' + options.css);
@@ -76,7 +90,7 @@
           }
         } else {
           obj.val(ml.truncate_html(obj.val(), limit));
-          // Re calculate text length
+          // Re-calculate text length.
           count = ml.strip_tags(obj.val()).length;
         }
       }
@@ -93,25 +107,38 @@
    * Replaces line ending with to chars, because PHP-calculation counts with two chars
    * as two characters.
    *
+   *  @param str
+   *   The given string to replace line endings for.
+   *
    * @see http://www.sitepoint.com/blogs/2004/02/16/line-endings-in-javascript/
    */
   ml.twochar_lineending = function(str) {
     return str.replace(/(\r\n|\r|\n)/g, "\r");
   };
 
+  /**
+   * Function to strip tags of a given input.
+   *
+   *  @param input
+   *   The given string to strip tags for.
+   *  @param allowed
+   *   Allowed tags, defaults to empty.
+   *
+   * @see http://www.sitepoint.com/blogs/2004/02/16/line-endings-in-javascript/
+   */
   ml.strip_tags = function(input, allowed) {
     // Remove all newlines, spaces and tabs from the beginning and end of html.
     input = $.trim(input);
-    // making the lineendings with two chars
+    // Making the line-endings with two chars.
     input = ml.twochar_lineending(input);
-    //input = input.split(' ').join('');
-    // Strips HTML and PHP tags from a string
+    // Making sure the allowed arg is a string containing only tags in
+    // lowercase (<a><b><c>).
     allowed = (((allowed || "") + "")
         .toLowerCase()
         .match(/<[a-z][a-z0-9]*>/g) || [])
-        .join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
-    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
-        commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+        .join('');
+    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi, commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+    // Strips HTML and PHP tags from a string.
     input = input.replace(commentsAndPhpTags, '').replace(tags, function($0, $1){
       return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
     });
@@ -121,7 +148,12 @@
   };
 
   /**
-   * Cuts a html text up to limit characters. Still experimental.
+   * Cuts an HTML text up to limit characters.
+   *
+   *  @param text
+   *   The given text to truncate.
+   *  @param limit
+   *   The number of characters to which we need to limit the text.
    */
   ml.truncate_html = function(text, limit) {
     // The html result after cut.
@@ -130,6 +162,25 @@
     var result_text = '';
     // A stack that will keep the tags that are open at a given time.
     var tags_open = new Array();
+    // List of self-closing tags
+    var self_closing_tags = [
+      'area',
+      'base',
+      'br',
+      'col',
+      'command',
+      'embed',
+      'hr',
+      'img',
+      'input',
+      'keygen',
+      'link',
+      'meta',
+      'param',
+      'source',
+      'track',
+      'wbr'
+    ];
     // making the lineendings with two chars
     text = ml.twochar_lineending(text);
     while (result_text.length < limit && text.length > 0) {
@@ -147,7 +198,9 @@
               if (!tag_name_completed && first_char == ' ') {
                 // We have the tag name, so push it into the stack.
                 tag_name_completed = true;
-                tags_open.push(tag_name);
+                if (self_closing_tags.indexOf(tag_name) == -1) {
+                  tags_open.push(tag_name);
+                }
               }
               // Check if we are still in the tag name.
               if (!tag_name_completed && first_char != '<') {
@@ -161,10 +214,10 @@
               //Done with this char, remove it from the original text.
               text = text.substring(1);
             }
-            if (!tag_name_completed) {
+            if (!tag_name_completed && self_closing_tags.indexOf(tag_name) == -1) {
               // In this case we have a tag like "<strong>some text</strong> so
               // we did not have any attributes in the tag, but still, the tag
-              // has to be marked as open.
+              // has to be marked as open. If tag is self-closing, skip.
               tags_open.push(tag_name);
             }
             //We are here, then the tag is closed, so just remove the
@@ -230,6 +283,12 @@
     return result_html;
   }
 
+  /**
+   * Character counter function that sets the character count message.
+   *
+   *  @param options
+   *    The array containing maxlength configurations.
+   */
   $.fn.charCount = function(options) {
     // default configuration properties
     var defaults = {
@@ -247,7 +306,7 @@
     ml.options[$(this).attr('id')] = options;
 
     if (options.action == 'detach') {
-      $(this).removeOnce('data-maxlength');
+      $(once.remove('maxlength', $(this)));
       $('#' + $(this).attr('id') + '-' + options.css).remove();
       delete ml.options[$(this).attr('id')];
       return 'removed';
@@ -283,7 +342,7 @@
   ml.ckeditorOnce = false;
 
   /**
-   * Integrate with ckEditor
+   * Integrate with CKEditor4.
    * Detect changes on editors and invoke ml.calculate()
    */
   ml.ckeditor = function() {
@@ -343,6 +402,39 @@
         e.editor.getSelection().selectRanges([range]);
       }});
     }
+  }
+
+  /**
+   * Function that integrates maxlength behaviour with CKEditor 5.
+   *
+   *  @param editor
+   *    The ckeditor that has the "maxlength" class.
+   *  @param options
+   *    The array containing the maxlength configurations.
+   */
+  ml.ckeditor5 = function (editor, options) {
+    $(once('maxlengthbinding', editor.sourceElement)).each(function() {
+      editor.model.document.on('change', function() {
+        if (editor.getData() !== editor.sourceElement.textContent) {
+          // Trim if limit is reached and enforcing is activated.
+          if (options['enforce']) {
+            let maxlength = $(editor.sourceElement).data('maxlength');
+            let data = editor.getData();
+            let trimmed = ml.truncate_html(data, maxlength);
+            if (data.length !== trimmed.length) {
+              editor.setData(trimmed);
+              setTimeout(() => {
+                editor.model.change( writer => {
+                  writer.setSelection( writer.createPositionAt( editor.model.document.getRoot(), 'end' ) );
+                }
+              )}, 1);
+            }
+          }
+          editor.updateSourceElement();
+          $(editor.sourceElement).trigger('change', [true]);
+        }
+      });
+    });
   }
 
 })(jQuery, Drupal);

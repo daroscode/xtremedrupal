@@ -36,6 +36,9 @@
     }
   ],
   "homepage": "https://www.drupal.org/project/maxlength",
+  "require": {
+      "drupal/core": "^9.2 || ^10"
+  },
   "support": {
     "issues": "https://www.drupal.org/project/issues/maxlength",
     "source": "https://git.drupalcode.org/project/maxlength"

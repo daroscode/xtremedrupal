@@ -1,5 +1,4 @@
 maxlength:
-  version: VERSION
   css:
     theme:
       css/maxlength.css: {}
@@ -7,5 +6,5 @@ maxlength:
     js/maxlength.js: {}
   dependencies:
     - core/drupal
-    - core/jquery.once
+    - core/once
     - core/jquery
