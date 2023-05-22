@@ -158,7 +158,7 @@
   ml.truncate_html = function(text, limit) {
     // The html result after cut.
     var result_html = '';
-    // The text result, that will actually used when counting characters.
+    // The text result, that will be actually used when counting characters.
     var result_text = '';
     // A stack that will keep the tags that are open at a given time.
     var tags_open = new Array();
@@ -181,7 +181,7 @@
       'track',
       'wbr'
     ];
-    // making the lineendings with two chars
+    // Making the line-endings with two chars.
     text = ml.twochar_lineending(text);
     while (result_text.length < limit && text.length > 0) {
       switch (text.charAt(0)) {
@@ -196,7 +196,7 @@
               result_html += first_char;
               // Also, check if we have a valid tag name.
               if (!tag_name_completed && first_char == ' ') {
-                // We have the tag name, so push it into the stack.
+                // We have the tag name, so push it into the open tags stack.
                 tag_name_completed = true;
                 if (self_closing_tags.indexOf(tag_name) == -1) {
                   tags_open.push(tag_name);
@@ -206,22 +206,17 @@
               if (!tag_name_completed && first_char != '<') {
                 tag_name += first_char;
               }
-              //If we have the combination "/>" it means that the tag
-              //is closed, so remove it from the open tags stack.
-              if (first_char == '/' && text.length > 1 && text.charAt(1) == '>') {
-                tags_open.pop();
-              }
-              //Done with this char, remove it from the original text.
+              // Done with this char, remove it from the original text.
               text = text.substring(1);
             }
             if (!tag_name_completed && self_closing_tags.indexOf(tag_name) == -1) {
-              // In this case we have a tag like "<strong>some text</strong> so
+              // In this case we have a tag like "<strong>some text</strong>" so
               // we did not have any attributes in the tag, but still, the tag
-              // has to be marked as open. If tag is self-closing, skip.
+              // has to be marked as open. If tag is self-closing, we skip.
               tags_open.push(tag_name);
             }
-            //We are here, then the tag is closed, so just remove the
-            //remaining ">" character.
+            // We are here, then the tag is closed, so just remove the
+            // remaining ">" character.
             if (text.length > 0) {
               result_html += text.charAt(0).toString();
             }
@@ -245,7 +240,7 @@
             // the tag name.
             var expected_tag_name = tags_open.pop();
             if (expected_tag_name != tag_name) {
-              //Should throw an exception, but for the moment just alert.
+              // Should throw an exception, but for the moment just alert.
               alert('Expected end tag: ' + expected_tag_name + '; Found end tag: '+tag_name);
             }
           }

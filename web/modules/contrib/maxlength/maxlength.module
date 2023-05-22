@@ -19,7 +19,7 @@ function maxlength_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.maxlength':
       $output = '<h2>' . t('About') . '</h2>';
       $output = '<p>' . t('To configure a character limit, navigate to the <strong>Manage form display</strong> settings page for the field you are setting a limit on. For example, setting a character limit on the Body field of the Article content type would be found at <em>Structure > Content Types > Article > Manage form display</em>.') . '</p>';
-      $output .= '<p>' . t('For more information, see the <a href="@maxlength-documentation" target="_blank">online documentation for the Maxlength module</a>.', ['@maxlength-documentation' => 'https://www.drupal.org/docs/contributed-modules/maxlength']) . '</p>';
+      $output .= '<p>' . t('For more information, see the <a href="@maxlength-documentation" target="_blank">online documentation for the MaxLength module</a>.', ['@maxlength-documentation' => 'https://www.drupal.org/docs/contributed-modules/maxlength']) . '</p>';
       return $output;
   }
 }
@@ -67,7 +67,7 @@ function maxlength_field_widget_third_party_settings_form(WidgetInterface $plugi
   if (!empty($allowed_settings)) {
     $element = [
       '#type' => 'details',
-      '#title' => t('Maxlength Settings'),
+      '#title' => t('MaxLength Settings'),
       '#open' => FALSE,
     ];
 
