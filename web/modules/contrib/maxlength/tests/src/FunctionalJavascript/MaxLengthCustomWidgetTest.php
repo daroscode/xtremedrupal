@@ -10,7 +10,7 @@ use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
  *
  * @group maxlength
  */
-class MaxlengthCustomWidgetTest extends WebDriverTestBase {
+class MaxLengthCustomWidgetTest extends WebDriverTestBase {
 
   /**
    * {@inheritdoc}
@@ -55,7 +55,7 @@ class MaxlengthCustomWidgetTest extends WebDriverTestBase {
   /**
    * Tests that a custom textarea widget gets picked up and is supported.
    */
-  public function testMaxlengthCustomWidgetSupported() {
+  public function testMaxLengthCustomWidgetSupported() {
     $admin_user = $this->drupalCreateUser([
       'bypass node access',
       'administer nodes',
@@ -68,7 +68,7 @@ class MaxlengthCustomWidgetTest extends WebDriverTestBase {
     $page->pressButton('edit-fields-body-settings-edit');
     $this->assertSession()->assertWaitOnAjaxRequest();
     $page->checkField('Always show the summary field');
-    $page->pressButton('Maxlength Settings');
+    $page->pressButton('MaxLength Settings');
 
     // Assert the maxlength config form.
     $this->assertSession()->fieldValueEquals('Summary maximum length', 200);
@@ -93,7 +93,7 @@ class MaxlengthCustomWidgetTest extends WebDriverTestBase {
 
     $page->pressButton('body_settings_edit');
     $this->assertSession()->assertWaitOnAjaxRequest();
-    $page->pressButton('Maxlength Settings');
+    $page->pressButton('MaxLength Settings');
 
     $page->fillField('Summary maximum length', '123');
     $page->pressButton('Update');
@@ -102,7 +102,7 @@ class MaxlengthCustomWidgetTest extends WebDriverTestBase {
 
     $page->pressButton('body_settings_edit');
     $this->assertSession()->assertWaitOnAjaxRequest();
-    $page->pressButton('Maxlength Settings');
+    $page->pressButton('MaxLength Settings');
 
     $page->fillField('Maximum length', '-1');
     $page->pressButton('Update');
@@ -122,7 +122,7 @@ class MaxlengthCustomWidgetTest extends WebDriverTestBase {
 
     $page->pressButton('body_settings_edit');
     $this->assertSession()->assertWaitOnAjaxRequest();
-    $page->pressButton('Maxlength Settings');
+    $page->pressButton('MaxLength Settings');
 
     $page->fillField('Maximum length', '200');
     $page->pressButton('Update');
@@ -169,7 +169,7 @@ class MaxlengthCustomWidgetTest extends WebDriverTestBase {
     $this->drupalGet('admin/structure/types/manage/article/form-display');
     $page->pressButton('edit-fields-body-settings-edit');
     $this->assertSession()->assertWaitOnAjaxRequest();
-    $page->pressButton('Maxlength Settings');
+    $page->pressButton('MaxLength Settings');
     $page->checkField('Hard limit');
     $page->pressButton('Update');
     $this->assertSession()->assertWaitOnAjaxRequest();

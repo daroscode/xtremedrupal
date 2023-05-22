@@ -9,11 +9,11 @@ use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 
 /**
- * Tests Javascript behaviour of Maxlength module.
+ * Tests Javascript behaviour of MaxLength module.
  *
  * @group maxlength
  */
-class MaxlengthJavascriptTest extends WebDriverTestBase {
+class MaxLengthJavascriptTest extends WebDriverTestBase {
 
   /**
    * {@inheritdoc}
@@ -28,7 +28,7 @@ class MaxlengthJavascriptTest extends WebDriverTestBase {
   /**
    * Tests that a single maxlength message is displayed to a formatted textarea.
    */
-  public function testMaxlengthIsUnique() {
+  public function testMaxLengthIsUnique() {
     FieldStorageConfig::create([
       'type' => 'text_long',
       'entity_type' => 'entity_test',
@@ -86,7 +86,7 @@ class MaxlengthJavascriptTest extends WebDriverTestBase {
   /**
    * Tests the JS enforce doesn't allow the user to type further than the limit.
    */
-  public function testMaxlengthJsEnforce() {
+  public function testMaxLengthJsEnforce() {
     FieldStorageConfig::create([
       'type' => 'link',
       'entity_type' => 'entity_test',

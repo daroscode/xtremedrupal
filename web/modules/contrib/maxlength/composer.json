@@ -1,6 +1,6 @@
 {
   "name": "drupal/maxlength",
-  "description": "Maxlength allows a soft or hard character limit to be set on titles, text fields and link fields.",
+  "description": "MaxLength allows a soft or hard character limit to be set on titles, text fields and link fields.",
   "type": "drupal-module",
   "license": "GPL-2.0-or-later",
   "authors": [
