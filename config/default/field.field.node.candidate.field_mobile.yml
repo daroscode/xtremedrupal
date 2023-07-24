@@ -1,0 +1,19 @@
+uuid: 749bbfb3-d47a-421b-bbc0-4c8acb264123
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mobile
+    - node.type.candidate
+id: node.candidate.field_mobile
+field_name: field_mobile
+entity_type: node
+bundle: candidate
+label: Mobile
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

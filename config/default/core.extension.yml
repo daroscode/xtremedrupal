@@ -19,6 +19,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  custom_token: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
@@ -71,6 +72,7 @@ module:
   taxonomy: 0
   telephone: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   twig_tweak: 0

@@ -1,0 +1,41 @@
+<?php
+
+use Drupal\Core\Render\BubbleableMetadata;
+
+/**
+ * Implements hook_token_info()
+ */
+
+function custom_token_token_info()
+{
+
+  $info['tokens']['site']['custom_token'] = array(
+    'name' => t('Custom Token'),
+    'description' => t('Url of the site, no language prefix garanted'),
+  );
+
+  return $info;
+}
+
+
+/**
+ * Implements hook_tokens()
+ */
+
+function custom_token_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata)
+{
+  $replacements = array();
+  global $base_root;
+
+
+  foreach ($tokens as $name => $original) {
+    switch ($name) {
+      case 'custom_token':
+        $replacements[$original] = $base_root;
+        break;
+    }
+  }
+
+
+  return $replacements;
+}

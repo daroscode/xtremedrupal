@@ -1,0 +1,35 @@
+uuid: c61de5d7-da86-4ff2-a7f3-7a7a8fef6cfb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.candidate.field_birth_date
+    - field.field.node.candidate.field_city
+    - field.field.node.candidate.field_country
+    - field.field.node.candidate.field_description
+    - field.field.node.candidate.field_email_id
+    - field.field.node.candidate.field_gender
+    - field.field.node.candidate.field_mobile
+    - node.type.candidate
+  module:
+    - user
+id: node.candidate.teaser
+targetEntityType: node
+bundle: candidate
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_birth_date: true
+  field_city: true
+  field_country: true
+  field_description: true
+  field_email_id: true
+  field_gender: true
+  field_mobile: true
+  search_api_excerpt: true

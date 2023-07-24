@@ -1,0 +1,5 @@
+name: Custom Token
+type: module
+description: "Returns absolute url of the site, no language prefix garanted"
+package: Custom
+core_version_requirement: ^8 || ^9

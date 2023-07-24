@@ -1,0 +1,18 @@
+uuid: 43f43d2f-9869-4150-91e8-cd12a5436140
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Candidate
+type: candidate
+description: 'API feed content type for Candidates.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true
